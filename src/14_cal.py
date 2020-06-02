@@ -31,6 +31,7 @@ import sys
 import calendar
 from datetime import datetime
 calendar.setfirstweekday(6)
+time = datetime.now()
 
 
-print(calendar)
+print(calendar.month(time.year, time.month))
