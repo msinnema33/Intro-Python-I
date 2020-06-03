@@ -34,4 +34,44 @@ calendar.setfirstweekday(6)
 time = datetime.now()
 
 
-print(calendar.month(time.year, time.month))
+def how_to_use():
+  return f"usage: {sys.argv[0]} [month] [year]"
+
+def valid_month(month):
+  if month <=12 and m >=1:
+    return True
+  else:
+    return False
+
+num_arg = len(sys.argv)
+
+if num_arg == 3:
+  month = int(sys.argv[1])
+  year = int(sys.argv[2])
+
+  if valid_month(month):
+    print(calendar.month(year, month))
+
+  else:
+    print(how_to_use())
+
+elif num_arg == 2:
+  month = int(sys.argv[1])
+  year = time.year
+
+  if valid_month(month):
+    print(calendar.month(year, month))
+
+  else:
+    print(how_to_use())
+
+elif num_arg == 1:
+    month = time.month
+    year = time.year
+
+    print(calendar.month(year, month))
+
+else:
+    print(how_to_use())          
+
+
